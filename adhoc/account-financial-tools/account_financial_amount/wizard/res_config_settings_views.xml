@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.debt.management</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='main_currency']" position="after">
+                <setting id="account_use_financial_amounts" invisible="not group_multi_currency"
+                    help="Display Financial amounts on partner debts views and reports. Financial amounts are amounts on other currency converted to company currency on todays exchange.">
+                    <field name="group_account_use_financial_amounts"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
